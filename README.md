@@ -1,1 +1,1 @@
-# AI-Powered-Voting-Life-Platform
+# AI-Powered-Boating-Platform
