@@ -84,13 +84,10 @@ project-root
 프로젝트 협업과 운영을 위한 주요 문서 링크입니다.
 
 - **Team Members**  
-  → [팀원 소개](./docs/team-members.md)
+  → [팀원 소개](https://github.com/beopgi/Pado-pado)
 
 - **Meeting Notes**  
-  → [회의록](./docs/meeting-notes.md)
-
-- **Project Schedule**  
-  → [일정 관리](./docs/project-schedule.md)
+  → [회의록](https://github.com/beopgi/Pado-pado/tree/main/%ED%9A%8C%EC%9D%98%EB%A1%9D)
 
 ---
 
