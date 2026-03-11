@@ -1,4 +1,4 @@
-# AI-Powered Boating Life Platform
+# AI 기반 Product-Ready 보팅 라이프 플랫폼: 매일 쓰는 올인원 모바일 앱으로 집단지성 항해 인텔리전스 구축
 
 > **데이터 기반 해양 라이프스타일 플랫폼**
 >
