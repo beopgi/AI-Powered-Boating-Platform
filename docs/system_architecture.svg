@@ -3,92 +3,116 @@
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#495057"/>
     </marker>
-    <marker id="arrowPink" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#c2255c"/>
+    <marker id="arrowYes" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2b8a3e"/>
+    </marker>
+    <marker id="arrowNo" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c92a2a"/>
+    </marker>
+    <marker id="arrowRetry" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e67700"/>
     </marker>
     <style>
       .title { font: 700 34px Arial, sans-serif; fill:#111; }
-      .label { font: 600 18px Arial, sans-serif; fill:#111; }
+      .label { font: 700 18px Arial, sans-serif; fill:#111; }
       .small { font: 16px Arial, sans-serif; fill:#222; }
-      .note { font: 700 18px Arial, sans-serif; fill:#c2255c; }
-      .box { stroke-width:2; rx:14; ry:14; }
-      .line { stroke:#495057; stroke-width:2; marker-end:url(#arrow); fill:none; }
+      .box { stroke-width:2.5; rx:14; ry:14; }
+      .line { stroke:#495057; stroke-width:2.5; marker-end:url(#arrow); fill:none; }
+      .yes { stroke:#2b8a3e; stroke-width:3; marker-end:url(#arrowYes); fill:none; }
+      .no { stroke:#c92a2a; stroke-width:3; marker-end:url(#arrowNo); fill:none; }
+      .retry { stroke:#e67700; stroke-width:3; stroke-dasharray:10 8; marker-end:url(#arrowRetry); fill:none; }
+      .yesText { font: 700 16px Arial, sans-serif; fill:#2b8a3e; }
+      .noText { font: 700 16px Arial, sans-serif; fill:#c92a2a; }
+      .retryText { font: 700 16px Arial, sans-serif; fill:#e67700; }
     </style>
   </defs>
 
   <rect width="1600" height="1000" fill="#f8f9fa"/>
-  <text x="800" y="55" class="title" text-anchor="middle">AI-Powered Boating Life Platform - System Architecture</text>
+  <text x="800" y="55" class="title" text-anchor="middle">AI-Powered Boating Platform - Flowchart Architecture</text>
 
-  <!-- Boxes -->
-  <rect class="box" x="60" y="190" width="260" height="180" fill="#e7f5ff" stroke="#1c7ed6"/>
-  <text x="190" y="245" class="label" text-anchor="middle">Mobile App</text>
-  <text x="190" y="275" class="small" text-anchor="middle">Flutter iOS/Android</text>
-  <text x="190" y="305" class="small" text-anchor="middle">Home / Map / Log / Events / My</text>
+  <!-- start + intake -->
+  <rect class="box" x="90" y="210" width="230" height="95" fill="#e7f5ff" stroke="#1c7ed6"/>
+  <text x="205" y="255" class="label" text-anchor="middle">Mobile App Request</text>
+  <text x="205" y="282" class="small" text-anchor="middle">Home / Map / Booking / Log</text>
 
-  <rect class="box" x="390" y="190" width="270" height="110" fill="#fff4e6" stroke="#f08c00"/>
-  <text x="525" y="235" class="label" text-anchor="middle">API Gateway / BFF</text>
-  <text x="525" y="265" class="small" text-anchor="middle">Auth, Rate Limit, Routing</text>
+  <rect class="box" x="390" y="210" width="260" height="95" fill="#fff4e6" stroke="#f08c00"/>
+  <text x="520" y="255" class="label" text-anchor="middle">API Gateway / BFF</text>
+  <text x="520" y="282" class="small" text-anchor="middle">Routing + Rate Limit</text>
 
-  <rect class="box" x="390" y="320" width="270" height="90" fill="#fff4e6" stroke="#f08c00"/>
-  <text x="525" y="360" class="label" text-anchor="middle">Auth Service</text>
-  <text x="525" y="388" class="small" text-anchor="middle">OAuth / JWT / RBAC</text>
+  <!-- decision 1 -->
+  <polygon points="820,190 940,260 820,330 700,260" fill="#fff3bf" stroke="#f08c00" stroke-width="3"/>
+  <text x="820" y="250" class="label" text-anchor="middle">Auth Valid?</text>
+  <text x="820" y="277" class="small" text-anchor="middle">JWT / RBAC Check</text>
 
-  <g fill="#f8f0fc" stroke="#9c36b5">
-    <rect class="box" x="730" y="150" width="230" height="95"/><rect class="box" x="990" y="150" width="230" height="95"/><rect class="box" x="1250" y="150" width="230" height="95"/>
-    <rect class="box" x="730" y="270" width="230" height="95"/><rect class="box" x="990" y="270" width="230" height="95"/><rect class="box" x="1250" y="270" width="230" height="95"/>
-    <rect class="box" x="990" y="390" width="230" height="95"/>
-  </g>
-  <text x="845" y="205" class="label" text-anchor="middle">User/Profile Service</text>
-  <text x="1105" y="205" class="label" text-anchor="middle">Recommendation Service</text>
-  <text x="1365" y="205" class="label" text-anchor="middle">Map &amp; POI Service</text>
-  <text x="845" y="325" class="label" text-anchor="middle">Sailing Log Service</text>
-  <text x="1105" y="325" class="label" text-anchor="middle">Events/Reservation Service</text>
-  <text x="1365" y="325" class="label" text-anchor="middle">Payment Service</text>
-  <text x="1105" y="445" class="label" text-anchor="middle">Notification Service</text>
+  <!-- auth failure -->
+  <rect class="box" x="700" y="430" width="240" height="90" fill="#ffe3e3" stroke="#e03131"/>
+  <text x="820" y="475" class="label" text-anchor="middle">Auth Service</text>
+  <text x="820" y="500" class="small" text-anchor="middle">Refresh / Re-login</text>
 
-  <g fill="#ebfbee" stroke="#2b8a3e">
-    <rect class="box" x="260" y="580" width="240" height="90"/><rect class="box" x="530" y="580" width="240" height="90"/><rect class="box" x="800" y="580" width="180" height="90"/>
-    <rect class="box" x="1010" y="580" width="250" height="90"/><rect class="box" x="1290" y="580" width="210" height="90"/>
-  </g>
-  <text x="380" y="620" class="label" text-anchor="middle">OLTP DB</text>
-  <text x="380" y="647" class="small" text-anchor="middle">Users / Bookings / Payments</text>
-  <text x="650" y="620" class="label" text-anchor="middle">Geo/Time-series DB</text>
-  <text x="650" y="647" class="small" text-anchor="middle">Route / Speed / Location</text>
-  <text x="890" y="630" class="label" text-anchor="middle">Redis Cache</text>
-  <text x="1135" y="620" class="label" text-anchor="middle">Data Lake / DWH</text>
-  <text x="1135" y="647" class="small" text-anchor="middle">Events &amp; Analytics</text>
-  <text x="1395" y="620" class="label" text-anchor="middle">ML Pipeline</text>
-  <text x="1395" y="647" class="small" text-anchor="middle">Train / Serve</text>
+  <!-- core domain services -->
+  <rect class="box" x="1040" y="140" width="240" height="90" fill="#f8f0fc" stroke="#9c36b5"/>
+  <text x="1160" y="182" class="label" text-anchor="middle">Map &amp; POI Service</text>
 
-  <g fill="#fff9db" stroke="#e67700">
-    <rect class="box" x="60" y="790" width="290" height="120"/><rect class="box" x="390" y="790" width="230" height="120"/><rect class="box" x="660" y="790" width="230" height="120"/>
-  </g>
-  <text x="205" y="835" class="label" text-anchor="middle">External APIs</text>
-  <text x="205" y="862" class="small" text-anchor="middle">Mapbox / Google Maps</text>
-  <text x="205" y="886" class="small" text-anchor="middle">Marine Public Data</text>
-  <text x="505" y="855" class="label" text-anchor="middle">Payment Gateway (PG)</text>
-  <text x="775" y="848" class="label" text-anchor="middle">Push Platform</text>
-  <text x="775" y="875" class="small" text-anchor="middle">FCM / APNs</text>
+  <rect class="box" x="1040" y="260" width="240" height="90" fill="#f8f0fc" stroke="#9c36b5"/>
+  <text x="1160" y="302" class="label" text-anchor="middle">Events / Booking</text>
 
-  <!-- arrows -->
-  <path class="line" d="M320 280 L390 245"/>
-  <path class="line" d="M660 245 L730 200"/>
-  <path class="line" d="M660 245 L990 200"/>
-  <path class="line" d="M660 245 L1250 200"/>
-  <path class="line" d="M660 245 L730 320"/>
-  <path class="line" d="M660 245 L990 320"/>
-  <path class="line" d="M660 245 L1250 320"/>
-  <path class="line" d="M660 245 L990 435"/>
+  <rect class="box" x="1040" y="380" width="240" height="90" fill="#f8f0fc" stroke="#9c36b5"/>
+  <text x="1160" y="422" class="label" text-anchor="middle">Sailing Log Service</text>
 
-  <path class="line" d="M845 365 L620 580"/>
-  <path class="line" d="M1105 365 L1130 580"/>
-  <path class="line" d="M1365 365 L1365 580"/>
-  <path class="line" d="M845 245 L380 580"/>
+  <!-- decision 2 -->
+  <polygon points="1410,250 1510,315 1410,380 1310,315" fill="#d3f9d8" stroke="#2b8a3e" stroke-width="3"/>
+  <text x="1410" y="307" class="label" text-anchor="middle">Process OK?</text>
+  <text x="1410" y="332" class="small" text-anchor="middle">Validation + Rules</text>
 
-  <path class="line" d="M350 850 L1365 245"/>
-  <path class="line" d="M620 850 L1365 320"/>
-  <path class="line" d="M890 850 L1105 485"/>
+  <!-- data + outputs -->
+  <rect class="box" x="1030" y="550" width="260" height="95" fill="#ebfbee" stroke="#2b8a3e"/>
+  <text x="1160" y="593" class="label" text-anchor="middle">OLTP / Geo DB / Cache</text>
+  <text x="1160" y="620" class="small" text-anchor="middle">Persist Route/Booking/Payment</text>
 
-  <path d="M1395 580 L1105 245" stroke="#c2255c" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
-  <text x="1260" y="455" class="note">Feedback Loop</text>
+  <rect class="box" x="1360" y="550" width="190" height="95" fill="#e7f5ff" stroke="#1c7ed6"/>
+  <text x="1455" y="593" class="label" text-anchor="middle">Client Response</text>
+  <text x="1455" y="620" class="small" text-anchor="middle">Success + Notification</text>
+
+  <rect class="box" x="1320" y="770" width="250" height="95" fill="#fff9db" stroke="#e67700"/>
+  <text x="1445" y="812" class="label" text-anchor="middle">Retry Queue / DLQ</text>
+  <text x="1445" y="840" class="small" text-anchor="middle">Backoff + Alert + Replay</text>
+
+  <!-- base flow -->
+  <path class="line" d="M320 258 L390 258"/>
+  <path class="line" d="M650 258 L700 260"/>
+  <path class="yes" d="M940 260 L1040 185"/>
+  <path class="yes" d="M940 260 L1040 305"/>
+  <path class="yes" d="M940 260 L1040 425"/>
+
+  <path class="line" d="M1280 185 L1310 285"/>
+  <path class="line" d="M1280 305 L1310 315"/>
+  <path class="line" d="M1280 425 L1310 345"/>
+
+  <!-- decision branches -->
+  <path class="yes" d="M1410 380 L1410 550 L1290 595"/>
+  <text x="1428" y="488" class="yesText">YES</text>
+
+  <path class="no" d="M1310 315 L950 315 L820 430"/>
+  <text x="1115" y="302" class="noText">NO</text>
+
+  <!-- auth fail to retry -->
+  <path class="no" d="M820 520 L820 818 L1320 818"/>
+  <text x="1035" y="804" class="noText">NO (AUTH/VALIDATION FAIL)</text>
+
+  <!-- success delivery -->
+  <path class="yes" d="M1290 595 L1360 595"/>
+
+  <!-- retry loop -->
+  <path class="retry" d="M1445 770 L1445 700 L1160 700 L1160 645"/>
+  <text x="1235" y="688" class="retryText">Retry Loop (Backoff)</text>
+
+  <path class="retry" d="M1320 818 L970 818 L970 260 L1040 260"/>
+  <text x="990" y="797" class="retryText">Replay to Services</text>
+
+  <!-- legends -->
+  <rect x="70" y="890" width="1460" height="70" rx="12" ry="12" fill="#ffffff" stroke="#ced4da"/>
+  <text x="100" y="930" class="yesText">Green YES branch = proceed/success</text>
+  <text x="520" y="930" class="noText">Red NO branch = fail path</text>
+  <text x="860" y="930" class="retryText">Orange dashed = automatic retry loop</text>
+  <text x="1230" y="930" class="small">Diamond = decision node</text>
 </svg>
