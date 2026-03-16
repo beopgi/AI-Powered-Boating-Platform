@@ -67,15 +67,17 @@ project-root
  ┣ mobile_app_wireframe.md
  ┗ README.md
 ```
+## 6) Documentation & Collaboration
 
+프로젝트 협업과 운영을 위한 주요 문서 링크입니다.
+
+- **Team Members**  
+  → [팀원 소개](https://github.com/beopgi/Pado-pado)
+
+- **Meeting Notes**  
+  → [회의록](https://github.com/beopgi/Pado-pado/tree/main/%ED%9A%8C%EC%9D%98%EB%A1%9D)
+  
 ---
-
-## 6) 로드맵
-- [ ] 추천 정확도 고도화(컨텍스트·시계열 반영)
-- [ ] 커뮤니티 및 사용자 생성 콘텐츠 기능
-- [ ] 사업자 운영 콘솔(재고/예약/정산)
-- [ ] 해양 안전 정보 연계 및 가이드 강화
-
 ---
 
 ## 7) 플랫폼 지원
