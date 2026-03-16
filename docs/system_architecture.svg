@@ -1,124 +1,160 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
   <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#444"/>
+    <marker id="arrowGray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#495057"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#1971c2"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#e03131"/>
     </marker>
     <style>
-      .title{font:700 48px 'Noto Sans KR',Arial,sans-serif;fill:#222}
-      .box{fill:#ededed;stroke:#8a8a8a;stroke-width:1.3;rx:18;ry:18}
-      .term{fill:#d9d9d9;stroke:#8a8a8a;stroke-width:1.3;rx:28;ry:28}
-      .decision{fill:#ededed;stroke:#8a8a8a;stroke-width:1.3}
-      .txt{font:24px 'Noto Sans KR',Arial,sans-serif;fill:#303030}
-      .small{font:20px 'Noto Sans KR',Arial,sans-serif;fill:#2b6cb0}
-      .no{font:20px 'Noto Sans KR',Arial,sans-serif;fill:#d94841}
-      .line{stroke:#444;stroke-width:2;fill:none;marker-end:url(#arrow)}
-      .line2{stroke:#d94841;stroke-width:2;fill:none;marker-end:url(#arrow)}
-      .line3{stroke:#2b6cb0;stroke-width:2;fill:none;marker-end:url(#arrow)}
+      .title { font: 700 44px Arial, sans-serif; fill: #212529; }
+      .node { fill: #f1f3f5; stroke: #868e96; stroke-width: 2; rx: 10; ry: 10; }
+      .terminal { fill: #dee2e6; stroke: #868e96; stroke-width: 2; rx: 25; ry: 25; }
+      .decision { fill: #f8f9fa; stroke: #868e96; stroke-width: 2; }
+      .text { font: 600 24px Arial, sans-serif; fill: #343a40; }
+      .service { fill: #f8f0fc; stroke: #9c36b5; stroke-width: 1.8; rx: 8; ry: 8; }
+      .serviceTitle { font: 700 22px Arial, sans-serif; fill: #5f3dc4; }
+      .yes { font: 700 18px Arial, sans-serif; fill: #1971c2; }
+      .no { font: 700 18px Arial, sans-serif; fill: #e03131; }
+      .arrow { stroke: #495057; stroke-width: 2.5; fill: none; marker-end: url(#arrowGray); }
+      .arrowYes { stroke: #1971c2; stroke-width: 2.8; fill: none; marker-end: url(#arrowBlue); }
+      .arrowNo { stroke: #e03131; stroke-width: 2.8; fill: none; marker-end: url(#arrowRed); }
     </style>
   </defs>
 
-  <rect width="1800" height="980" fill="#ececec"/>
-  <text x="50" y="75" class="title">보팅 라이프 플랫폼 Flowchart</text>
+  <rect width="1920" height="1080" fill="#ececec"/>
+  <text x="60" y="70" class="title">AI-Powered Boating Platform Flowchart</text>
 
-  <!-- Main flow -->
-  <rect class="term" x="40" y="120" width="180" height="54"/>
-  <text class="txt" x="130" y="155" text-anchor="middle">앱 실행</text>
+  <!-- Main flow nodes -->
+  <rect class="terminal" x="70" y="130" width="200" height="60"/>
+  <text class="text" x="170" y="168" text-anchor="middle">앱 실행</text>
 
-  <rect class="box" x="40" y="245" width="180" height="54"/>
-  <text class="txt" x="130" y="280" text-anchor="middle">로그인</text>
+  <rect class="node" x="70" y="240" width="220" height="64"/>
+  <text class="text" x="180" y="280" text-anchor="middle">로그인/온보딩</text>
 
-  <polygon class="decision" points="300,245 380,272 300,299 220,272"/>
-  <text class="txt" x="300" y="279" text-anchor="middle">권한 허용</text>
+  <polygon class="decision" points="410,240 500,272 410,304 320,272"/>
+  <text class="text" x="410" y="278" text-anchor="middle">위치 권한?</text>
 
-  <rect class="box" x="460" y="245" width="220" height="54"/>
-  <text class="txt" x="570" y="280" text-anchor="middle">홈/추천 노출</text>
+  <rect class="node" x="560" y="240" width="200" height="64"/>
+  <text class="text" x="660" y="280" text-anchor="middle">홈 진입</text>
 
-  <rect class="box" x="760" y="245" width="220" height="54"/>
-  <text class="txt" x="870" y="280" text-anchor="middle">지도/이벤트 탐색</text>
+  <polygon class="decision" points="900,240 990,272 900,304 810,272"/>
+  <text class="text" x="900" y="278" text-anchor="middle">개인화 충분?</text>
 
-  <polygon class="decision" points="1070,245 1150,272 1070,299 990,272"/>
-  <text class="txt" x="1070" y="279" text-anchor="middle">항해 시작</text>
+  <rect class="node" x="1060" y="170" width="260" height="64"/>
+  <text class="text" x="1190" y="210" text-anchor="middle">AI 추천 콘텐츠</text>
 
-  <rect class="box" x="1220" y="180" width="230" height="54"/>
-  <text class="txt" x="1335" y="215" text-anchor="middle">실시간 트래킹</text>
+  <rect class="node" x="1060" y="310" width="260" height="64"/>
+  <text class="text" x="1190" y="350" text-anchor="middle">인기 콘텐츠</text>
 
-  <rect class="box" x="1220" y="245" width="230" height="54"/>
-  <text class="txt" x="1335" y="280" text-anchor="middle">항해 로그 저장</text>
+  <rect class="node" x="1380" y="240" width="260" height="64"/>
+  <text class="text" x="1510" y="280" text-anchor="middle">지도/이벤트 탐색</text>
 
-  <rect class="box" x="1220" y="310" width="230" height="54"/>
-  <text class="txt" x="1335" y="345" text-anchor="middle">리포트/분석</text>
+  <polygon class="decision" points="1740,240 1830,272 1740,304 1650,272"/>
+  <text class="text" x="1740" y="278" text-anchor="middle">항해 시작?</text>
 
-  <rect class="box" x="1220" y="430" width="230" height="54"/>
-  <text class="txt" x="1335" y="465" text-anchor="middle">이벤트 상세</text>
+  <!-- sailing branch -->
+  <rect class="node" x="1540" y="380" width="230" height="58"/>
+  <text class="text" x="1655" y="417" text-anchor="middle">실시간 트래킹</text>
 
-  <polygon class="decision" points="1530,430 1610,457 1530,484 1450,457"/>
-  <text class="txt" x="1530" y="464" text-anchor="middle">좌석 가용</text>
+  <rect class="node" x="1540" y="460" width="230" height="58"/>
+  <text class="text" x="1655" y="497" text-anchor="middle">항해 로그 저장</text>
 
-  <rect class="box" x="1650" y="430" width="130" height="54"/>
-  <text class="txt" x="1715" y="465" text-anchor="middle">예약</text>
+  <rect class="node" x="1540" y="540" width="230" height="58"/>
+  <text class="text" x="1655" y="577" text-anchor="middle">리포트 생성</text>
 
-  <rect class="box" x="1650" y="520" width="130" height="54"/>
-  <text class="txt" x="1715" y="555" text-anchor="middle">결제</text>
+  <!-- reservation branch -->
+  <rect class="node" x="1360" y="680" width="230" height="58"/>
+  <text class="text" x="1475" y="717" text-anchor="middle">이벤트 상세</text>
 
-  <polygon class="decision" points="1530,610 1610,637 1530,664 1450,637"/>
-  <text class="txt" x="1530" y="644" text-anchor="middle">결제 성공</text>
+  <polygon class="decision" points="1730,680 1820,709 1730,738 1640,709"/>
+  <text class="text" x="1730" y="715" text-anchor="middle">좌석 가용?</text>
 
-  <rect class="box" x="1220" y="610" width="200" height="54"/>
-  <text class="txt" x="1320" y="645" text-anchor="middle">예약 확정/바우처</text>
+  <rect class="node" x="1360" y="790" width="230" height="58"/>
+  <text class="text" x="1475" y="827" text-anchor="middle">예약 요청</text>
 
-  <rect class="term" x="1220" y="760" width="230" height="58"/>
-  <text class="txt" x="1335" y="798" text-anchor="middle">알림 발송 후 홈 복귀</text>
+  <rect class="node" x="1640" y="790" width="230" height="58"/>
+  <text class="text" x="1755" y="827" text-anchor="middle">결제 시도</text>
 
-  <!-- services area -->
-  <rect x="430" y="560" width="700" height="290" fill="none" stroke="#b3b3b3" stroke-width="1.5"/>
-  <text class="txt" x="450" y="595">Platform Services</text>
+  <polygon class="decision" points="1730,890 1820,919 1730,948 1640,919"/>
+  <text class="text" x="1730" y="925" text-anchor="middle">결제 성공?</text>
 
-  <rect class="box" x="450" y="620" width="170" height="46"/><text class="txt" x="535" y="650" text-anchor="middle">API Gateway</text>
-  <rect class="box" x="640" y="620" width="120" height="46"/><text class="txt" x="700" y="650" text-anchor="middle">Auth</text>
-  <rect class="box" x="780" y="620" width="150" height="46"/><text class="txt" x="855" y="650" text-anchor="middle">Recommendation</text>
-  <rect class="box" x="950" y="620" width="150" height="46"/><text class="txt" x="1025" y="650" text-anchor="middle">Map/POI</text>
+  <rect class="node" x="1360" y="900" width="230" height="58"/>
+  <text class="text" x="1475" y="937" text-anchor="middle">예약 확정/바우처</text>
 
-  <rect class="box" x="450" y="700" width="150" height="46"/><text class="txt" x="525" y="730" text-anchor="middle">Sailing Log</text>
-  <rect class="box" x="620" y="700" width="150" height="46"/><text class="txt" x="695" y="730" text-anchor="middle">Reservation</text>
-  <rect class="box" x="790" y="700" width="120" height="46"/><text class="txt" x="850" y="730" text-anchor="middle">Payment</text>
-  <rect class="box" x="930" y="700" width="170" height="46"/><text class="txt" x="1015" y="730" text-anchor="middle">Notification</text>
+  <rect class="terminal" x="980" y="960" width="300" height="64"/>
+  <text class="text" x="1130" y="1000" text-anchor="middle">푸시 알림 후 홈 복귀</text>
 
-  <!-- arrows -->
-  <path class="line" d="M130 174 L130 245"/>
-  <path class="line" d="M220 272 L220 272"/>
-  <path class="line" d="M380 272 L460 272"/>
-  <path class="line" d="M680 272 L760 272"/>
-  <path class="line" d="M980 272 L990 272"/>
-  <path class="line3" d="M1150 272 L1220 207"/>
-  <text class="small" x="1175" y="235">YES</text>
-  <path class="line" d="M1335 234 L1335 245"/>
-  <path class="line" d="M1335 299 L1335 310"/>
+  <!-- service block -->
+  <rect x="130" y="620" width="1120" height="350" fill="none" stroke="#adb5bd" stroke-width="2"/>
+  <text x="160" y="655" class="serviceTitle">Platform Services</text>
 
-  <path class="line2" d="M1070 299 L1070 457 L1220 457"/>
-  <text class="no" x="1090" y="445">NO</text>
+  <rect class="service" x="160" y="690" width="200" height="56"/><text class="text" x="260" y="726" text-anchor="middle">API Gateway</text>
+  <rect class="service" x="390" y="690" width="140" height="56"/><text class="text" x="460" y="726" text-anchor="middle">Auth</text>
+  <rect class="service" x="560" y="690" width="220" height="56"/><text class="text" x="670" y="726" text-anchor="middle">Recommendation</text>
+  <rect class="service" x="810" y="690" width="170" height="56"/><text class="text" x="895" y="726" text-anchor="middle">Map/POI</text>
 
-  <path class="line" d="M1450 457 L1450 457"/>
-  <path class="line3" d="M1610 457 L1650 457"/>
-  <text class="small" x="1620" y="444">YES</text>
+  <rect class="service" x="160" y="780" width="180" height="56"/><text class="text" x="250" y="816" text-anchor="middle">Sailing Log</text>
+  <rect class="service" x="370" y="780" width="190" height="56"/><text class="text" x="465" y="816" text-anchor="middle">Reservation</text>
+  <rect class="service" x="590" y="780" width="150" height="56"/><text class="text" x="665" y="816" text-anchor="middle">Payment</text>
+  <rect class="service" x="770" y="780" width="220" height="56"/><text class="text" x="880" y="816" text-anchor="middle">Notification</text>
 
-  <path class="line" d="M1715 484 L1715 520"/>
-  <path class="line" d="M1650 637 L1610 637"/>
+  <!-- arrows main -->
+  <path class="arrow" d="M170 190 L180 240"/>
+  <path class="arrow" d="M290 272 L320 272"/>
 
-  <path class="line3" d="M1450 637 L1420 637"/>
-  <text class="small" x="1430" y="624">YES</text>
-  <path class="line" d="M1420 637 L1420 637"/>
-  <path class="line" d="M1220 637 L1220 789"/>
+  <path class="arrowYes" d="M500 272 L560 272"/>
+  <text class="yes" x="525" y="255">YES</text>
 
-  <path class="line2" d="M1530 664 L1530 730 L1335 730 L1335 760"/>
-  <text class="no" x="1545" y="705">NO (재시도)</text>
+  <path class="arrowNo" d="M410 304 L410 360 L180 360 L180 304"/>
+  <text class="no" x="330" y="350">NO (권한 안내 후 재시도)</text>
 
-  <path class="line2" d="M300 299 L300 360 L130 360 L130 299"/>
-  <text class="no" x="235" y="350">NO (권한 요청)</text>
+  <path class="arrow" d="M760 272 L810 272"/>
+  <path class="arrowYes" d="M990 272 L1060 202"/>
+  <text class="yes" x="1005" y="230">YES</text>
+  <path class="arrowNo" d="M990 272 L1060 342"/>
+  <text class="no" x="1008" y="328">NO</text>
 
-  <path class="line3" d="M570 299 L570 620"/>
-  <path class="line3" d="M535 666 L535 700"/>
-  <path class="line3" d="M700 666 L700 700"/>
-  <path class="line3" d="M855 666 L855 700"/>
+  <path class="arrow" d="M1320 202 L1380 272"/>
+  <path class="arrow" d="M1320 342 L1380 272"/>
+  <path class="arrow" d="M1640 272 L1650 272"/>
 
-  <path class="line2" d="M1335 818 L1335 880 L570 880 L570 299"/>
+  <!-- branch: sailing -->
+  <path class="arrowYes" d="M1740 304 L1740 350 L1655 350 L1655 380"/>
+  <text class="yes" x="1752" y="338">YES</text>
+  <path class="arrow" d="M1655 438 L1655 460"/>
+  <path class="arrow" d="M1655 518 L1655 540"/>
+  <path class="arrow" d="M1540 569 L1475 569 L1475 680"/>
+
+  <!-- branch: reservation -->
+  <path class="arrowNo" d="M1740 304 L1740 650 L1475 650 L1475 680"/>
+  <text class="no" x="1752" y="640">NO</text>
+
+  <path class="arrow" d="M1590 709 L1640 709"/>
+  <path class="arrowNo" d="M1730 738 L1730 770 L1475 770 L1475 680"/>
+  <text class="no" x="1744" y="766">NO (대체 시간)</text>
+  <path class="arrowYes" d="M1730 738 L1730 790"/>
+  <text class="yes" x="1744" y="778">YES</text>
+
+  <path class="arrow" d="M1590 819 L1640 819"/>
+  <path class="arrow" d="M1755 848 L1755 890"/>
+
+  <path class="arrowNo" d="M1730 948 L1870 948 L1870 819 L1755 819"/>
+  <text class="no" x="1840" y="935">NO (결제 재시도)</text>
+
+  <path class="arrowYes" d="M1640 919 L1590 919"/>
+  <text class="yes" x="1602" y="904">YES</text>
+  <path class="arrow" d="M1360 929 L1130 929 L1130 960"/>
+  <path class="arrow" d="M1130 960 L1130 920 L660 920 L660 304"/>
+
+  <!-- service mapping arrows -->
+  <path class="arrowYes" d="M660 304 L660 690 L260 690"/>
+  <path class="arrowYes" d="M260 746 L250 780"/>
+  <path class="arrowYes" d="M260 746 L460 746 L460 780"/>
+  <path class="arrowYes" d="M260 746 L665 746 L665 780"/>
+  <path class="arrowYes" d="M260 746 L895 746 L895 690"/>
+  <text class="yes" x="670" y="675">API 호출</text>
 </svg>
