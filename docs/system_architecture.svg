@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#444"/>
+    </marker>
+    <style>
+      .title{font:700 48px 'Noto Sans KR',Arial,sans-serif;fill:#222}
+      .box{fill:#ededed;stroke:#8a8a8a;stroke-width:1.3;rx:18;ry:18}
+      .term{fill:#d9d9d9;stroke:#8a8a8a;stroke-width:1.3;rx:28;ry:28}
+      .decision{fill:#ededed;stroke:#8a8a8a;stroke-width:1.3}
+      .txt{font:24px 'Noto Sans KR',Arial,sans-serif;fill:#303030}
+      .small{font:20px 'Noto Sans KR',Arial,sans-serif;fill:#2b6cb0}
+      .no{font:20px 'Noto Sans KR',Arial,sans-serif;fill:#d94841}
+      .line{stroke:#444;stroke-width:2;fill:none;marker-end:url(#arrow)}
+      .line2{stroke:#d94841;stroke-width:2;fill:none;marker-end:url(#arrow)}
+      .line3{stroke:#2b6cb0;stroke-width:2;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1800" height="980" fill="#ececec"/>
+  <text x="50" y="75" class="title">보팅 라이프 플랫폼 Flowchart</text>
+
+  <!-- Main flow -->
+  <rect class="term" x="40" y="120" width="180" height="54"/>
+  <text class="txt" x="130" y="155" text-anchor="middle">앱 실행</text>
+
+  <rect class="box" x="40" y="245" width="180" height="54"/>
+  <text class="txt" x="130" y="280" text-anchor="middle">로그인</text>
+
+  <polygon class="decision" points="300,245 380,272 300,299 220,272"/>
+  <text class="txt" x="300" y="279" text-anchor="middle">권한 허용</text>
+
+  <rect class="box" x="460" y="245" width="220" height="54"/>
+  <text class="txt" x="570" y="280" text-anchor="middle">홈/추천 노출</text>
+
+  <rect class="box" x="760" y="245" width="220" height="54"/>
+  <text class="txt" x="870" y="280" text-anchor="middle">지도/이벤트 탐색</text>
+
+  <polygon class="decision" points="1070,245 1150,272 1070,299 990,272"/>
+  <text class="txt" x="1070" y="279" text-anchor="middle">항해 시작</text>
+
+  <rect class="box" x="1220" y="180" width="230" height="54"/>
+  <text class="txt" x="1335" y="215" text-anchor="middle">실시간 트래킹</text>
+
+  <rect class="box" x="1220" y="245" width="230" height="54"/>
+  <text class="txt" x="1335" y="280" text-anchor="middle">항해 로그 저장</text>
+
+  <rect class="box" x="1220" y="310" width="230" height="54"/>
+  <text class="txt" x="1335" y="345" text-anchor="middle">리포트/분석</text>
+
+  <rect class="box" x="1220" y="430" width="230" height="54"/>
+  <text class="txt" x="1335" y="465" text-anchor="middle">이벤트 상세</text>
+
+  <polygon class="decision" points="1530,430 1610,457 1530,484 1450,457"/>
+  <text class="txt" x="1530" y="464" text-anchor="middle">좌석 가용</text>
+
+  <rect class="box" x="1650" y="430" width="130" height="54"/>
+  <text class="txt" x="1715" y="465" text-anchor="middle">예약</text>
+
+  <rect class="box" x="1650" y="520" width="130" height="54"/>
+  <text class="txt" x="1715" y="555" text-anchor="middle">결제</text>
+
+  <polygon class="decision" points="1530,610 1610,637 1530,664 1450,637"/>
+  <text class="txt" x="1530" y="644" text-anchor="middle">결제 성공</text>
+
+  <rect class="box" x="1220" y="610" width="200" height="54"/>
+  <text class="txt" x="1320" y="645" text-anchor="middle">예약 확정/바우처</text>
+
+  <rect class="term" x="1220" y="760" width="230" height="58"/>
+  <text class="txt" x="1335" y="798" text-anchor="middle">알림 발송 후 홈 복귀</text>
+
+  <!-- services area -->
+  <rect x="430" y="560" width="700" height="290" fill="none" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text class="txt" x="450" y="595">Platform Services</text>
+
+  <rect class="box" x="450" y="620" width="170" height="46"/><text class="txt" x="535" y="650" text-anchor="middle">API Gateway</text>
+  <rect class="box" x="640" y="620" width="120" height="46"/><text class="txt" x="700" y="650" text-anchor="middle">Auth</text>
+  <rect class="box" x="780" y="620" width="150" height="46"/><text class="txt" x="855" y="650" text-anchor="middle">Recommendation</text>
+  <rect class="box" x="950" y="620" width="150" height="46"/><text class="txt" x="1025" y="650" text-anchor="middle">Map/POI</text>
+
+  <rect class="box" x="450" y="700" width="150" height="46"/><text class="txt" x="525" y="730" text-anchor="middle">Sailing Log</text>
+  <rect class="box" x="620" y="700" width="150" height="46"/><text class="txt" x="695" y="730" text-anchor="middle">Reservation</text>
+  <rect class="box" x="790" y="700" width="120" height="46"/><text class="txt" x="850" y="730" text-anchor="middle">Payment</text>
+  <rect class="box" x="930" y="700" width="170" height="46"/><text class="txt" x="1015" y="730" text-anchor="middle">Notification</text>
+
+  <!-- arrows -->
+  <path class="line" d="M130 174 L130 245"/>
+  <path class="line" d="M220 272 L220 272"/>
+  <path class="line" d="M380 272 L460 272"/>
+  <path class="line" d="M680 272 L760 272"/>
+  <path class="line" d="M980 272 L990 272"/>
+  <path class="line3" d="M1150 272 L1220 207"/>
+  <text class="small" x="1175" y="235">YES</text>
+  <path class="line" d="M1335 234 L1335 245"/>
+  <path class="line" d="M1335 299 L1335 310"/>
+
+  <path class="line2" d="M1070 299 L1070 457 L1220 457"/>
+  <text class="no" x="1090" y="445">NO</text>
+
+  <path class="line" d="M1450 457 L1450 457"/>
+  <path class="line3" d="M1610 457 L1650 457"/>
+  <text class="small" x="1620" y="444">YES</text>
+
+  <path class="line" d="M1715 484 L1715 520"/>
+  <path class="line" d="M1650 637 L1610 637"/>
+
+  <path class="line3" d="M1450 637 L1420 637"/>
+  <text class="small" x="1430" y="624">YES</text>
+  <path class="line" d="M1420 637 L1420 637"/>
+  <path class="line" d="M1220 637 L1220 789"/>
+
+  <path class="line2" d="M1530 664 L1530 730 L1335 730 L1335 760"/>
+  <text class="no" x="1545" y="705">NO (재시도)</text>
+
+  <path class="line2" d="M300 299 L300 360 L130 360 L130 299"/>
+  <text class="no" x="235" y="350">NO (권한 요청)</text>
+
+  <path class="line3" d="M570 299 L570 620"/>
+  <path class="line3" d="M535 666 L535 700"/>
+  <path class="line3" d="M700 666 L700 700"/>
+  <path class="line3" d="M855 666 L855 700"/>
+
+  <path class="line2" d="M1335 818 L1335 880 L570 880 L570 299"/>
+</svg>
