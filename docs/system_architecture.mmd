@@ -1,35 +1,35 @@
-flowchart TB
-    subgraph C[Client Layer]
-      APP[Mobile App\nFlutter iOS/Android\nHome/Map/Log/Events/My]
+flowchart LR
+    subgraph C[클라이언트 레이어]
+      APP[모바일 앱\nFlutter iOS/Android\n홈·지도·예약·기록·마이]
     end
 
-    subgraph E[Edge & Access]
-      GW[API Gateway / BFF\nAuth, Rate Limit, Routing]
-      AUTH[Auth Service\nOAuth/JWT/RBAC]
+    subgraph E[엣지 및 접근 레이어]
+      GW[API 게이트웨이 / BFF\n라우팅·속도 제한·버전 관리]
+      AUTH[인증 서비스\nOAuth·JWT·RBAC]
     end
 
-    subgraph S[Domain Services]
-      USER[User/Profile Service]
-      REC[Recommendation Service]
-      MAP[Map & POI Service]
-      LOG[Sailing Log Service]
-      EVT[Events/Reservation Service]
-      PAY[Payment Service]
-      NOTI[Notification Service]
+    subgraph S[도메인 서비스 레이어]
+      USER[사용자/프로필 서비스]
+      REC[추천 서비스]
+      MAP[지도 및 POI 서비스]
+      LOG[항해 기록 서비스]
+      EVT[이벤트/예약 서비스]
+      PAY[결제 서비스]
+      NOTI[알림 서비스]
     end
 
-    subgraph D[Data & Intelligence]
-      DB[(OLTP DB)]
-      GEO[(Geo/Time-series DB)]
-      CACHE[(Redis Cache)]
-      DWH[(Data Lake / Warehouse)]
-      ML[(ML Pipeline)]
+    subgraph D[데이터 및 인텔리전스 레이어]
+      DB[(운영 DB\nOLTP)]
+      GEO[(Geo·시계열 DB)]
+      CACHE[(Redis 캐시)]
+      DWH[(데이터 레이크/웨어하우스)]
+      ML[(ML 파이프라인)]
     end
 
-    subgraph X[External Integrations]
-      EXT1[Maps API + Marine Public Data]
-      EXT2[Payment Gateway]
-      EXT3[Push: FCM/APNs]
+    subgraph X[외부 연동]
+      EXT1[지도 API + 해양 공공데이터]
+      EXT2[결제 게이트웨이]
+      EXT3[푸시 인프라\nFCM/APNs]
     end
 
     APP --> GW
@@ -43,17 +43,16 @@ flowchart TB
     GW --> NOTI
 
     USER --> DB
-    LOG --> GEO
-    REC --> CACHE
     EVT --> DB
     PAY --> DB
-    NOTI --> DWH
+    LOG --> GEO
+    REC --> CACHE
     REC --> DWH
+    NOTI --> DWH
     DWH --> ML
-    ML -. feedback .-> REC
+    ML -. 피드백 .-> REC
 
     EXT1 --> MAP
     EXT1 --> REC
     EXT2 --> PAY
     EXT3 --> NOTI
-
