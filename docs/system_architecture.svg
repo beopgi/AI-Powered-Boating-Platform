@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#495057"/>
+    </marker>
+    <marker id="arrowPink" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c2255c"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill:#111; }
+      .label { font: 600 18px Arial, sans-serif; fill:#111; }
+      .small { font: 16px Arial, sans-serif; fill:#222; }
+      .note { font: 700 18px Arial, sans-serif; fill:#c2255c; }
+      .box { stroke-width:2; rx:14; ry:14; }
+      .line { stroke:#495057; stroke-width:2; marker-end:url(#arrow); fill:none; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f8f9fa"/>
+  <text x="800" y="55" class="title" text-anchor="middle">AI-Powered Boating Life Platform - System Architecture</text>
+
+  <!-- Boxes -->
+  <rect class="box" x="60" y="190" width="260" height="180" fill="#e7f5ff" stroke="#1c7ed6"/>
+  <text x="190" y="245" class="label" text-anchor="middle">Mobile App</text>
+  <text x="190" y="275" class="small" text-anchor="middle">Flutter iOS/Android</text>
+  <text x="190" y="305" class="small" text-anchor="middle">Home / Map / Log / Events / My</text>
+
+  <rect class="box" x="390" y="190" width="270" height="110" fill="#fff4e6" stroke="#f08c00"/>
+  <text x="525" y="235" class="label" text-anchor="middle">API Gateway / BFF</text>
+  <text x="525" y="265" class="small" text-anchor="middle">Auth, Rate Limit, Routing</text>
+
+  <rect class="box" x="390" y="320" width="270" height="90" fill="#fff4e6" stroke="#f08c00"/>
+  <text x="525" y="360" class="label" text-anchor="middle">Auth Service</text>
+  <text x="525" y="388" class="small" text-anchor="middle">OAuth / JWT / RBAC</text>
+
+  <g fill="#f8f0fc" stroke="#9c36b5">
+    <rect class="box" x="730" y="150" width="230" height="95"/><rect class="box" x="990" y="150" width="230" height="95"/><rect class="box" x="1250" y="150" width="230" height="95"/>
+    <rect class="box" x="730" y="270" width="230" height="95"/><rect class="box" x="990" y="270" width="230" height="95"/><rect class="box" x="1250" y="270" width="230" height="95"/>
+    <rect class="box" x="990" y="390" width="230" height="95"/>
+  </g>
+  <text x="845" y="205" class="label" text-anchor="middle">User/Profile Service</text>
+  <text x="1105" y="205" class="label" text-anchor="middle">Recommendation Service</text>
+  <text x="1365" y="205" class="label" text-anchor="middle">Map &amp; POI Service</text>
+  <text x="845" y="325" class="label" text-anchor="middle">Sailing Log Service</text>
+  <text x="1105" y="325" class="label" text-anchor="middle">Events/Reservation Service</text>
+  <text x="1365" y="325" class="label" text-anchor="middle">Payment Service</text>
+  <text x="1105" y="445" class="label" text-anchor="middle">Notification Service</text>
+
+  <g fill="#ebfbee" stroke="#2b8a3e">
+    <rect class="box" x="260" y="580" width="240" height="90"/><rect class="box" x="530" y="580" width="240" height="90"/><rect class="box" x="800" y="580" width="180" height="90"/>
+    <rect class="box" x="1010" y="580" width="250" height="90"/><rect class="box" x="1290" y="580" width="210" height="90"/>
+  </g>
+  <text x="380" y="620" class="label" text-anchor="middle">OLTP DB</text>
+  <text x="380" y="647" class="small" text-anchor="middle">Users / Bookings / Payments</text>
+  <text x="650" y="620" class="label" text-anchor="middle">Geo/Time-series DB</text>
+  <text x="650" y="647" class="small" text-anchor="middle">Route / Speed / Location</text>
+  <text x="890" y="630" class="label" text-anchor="middle">Redis Cache</text>
+  <text x="1135" y="620" class="label" text-anchor="middle">Data Lake / DWH</text>
+  <text x="1135" y="647" class="small" text-anchor="middle">Events &amp; Analytics</text>
+  <text x="1395" y="620" class="label" text-anchor="middle">ML Pipeline</text>
+  <text x="1395" y="647" class="small" text-anchor="middle">Train / Serve</text>
+
+  <g fill="#fff9db" stroke="#e67700">
+    <rect class="box" x="60" y="790" width="290" height="120"/><rect class="box" x="390" y="790" width="230" height="120"/><rect class="box" x="660" y="790" width="230" height="120"/>
+  </g>
+  <text x="205" y="835" class="label" text-anchor="middle">External APIs</text>
+  <text x="205" y="862" class="small" text-anchor="middle">Mapbox / Google Maps</text>
+  <text x="205" y="886" class="small" text-anchor="middle">Marine Public Data</text>
+  <text x="505" y="855" class="label" text-anchor="middle">Payment Gateway (PG)</text>
+  <text x="775" y="848" class="label" text-anchor="middle">Push Platform</text>
+  <text x="775" y="875" class="small" text-anchor="middle">FCM / APNs</text>
+
+  <!-- arrows -->
+  <path class="line" d="M320 280 L390 245"/>
+  <path class="line" d="M660 245 L730 200"/>
+  <path class="line" d="M660 245 L990 200"/>
+  <path class="line" d="M660 245 L1250 200"/>
+  <path class="line" d="M660 245 L730 320"/>
+  <path class="line" d="M660 245 L990 320"/>
+  <path class="line" d="M660 245 L1250 320"/>
+  <path class="line" d="M660 245 L990 435"/>
+
+  <path class="line" d="M845 365 L620 580"/>
+  <path class="line" d="M1105 365 L1130 580"/>
+  <path class="line" d="M1365 365 L1365 580"/>
+  <path class="line" d="M845 245 L380 580"/>
+
+  <path class="line" d="M350 850 L1365 245"/>
+  <path class="line" d="M620 850 L1365 320"/>
+  <path class="line" d="M890 850 L1105 485"/>
+
+  <path d="M1395 580 L1105 245" stroke="#c2255c" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  <text x="1260" y="455" class="note">Feedback Loop</text>
+</svg>
