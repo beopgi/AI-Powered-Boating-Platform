@@ -1,0 +1,59 @@
+flowchart TB
+    subgraph C[Client Layer]
+      APP[Mobile App\nFlutter iOS/Android\nHome/Map/Log/Events/My]
+    end
+
+    subgraph E[Edge & Access]
+      GW[API Gateway / BFF\nAuth, Rate Limit, Routing]
+      AUTH[Auth Service\nOAuth/JWT/RBAC]
+    end
+
+    subgraph S[Domain Services]
+      USER[User/Profile Service]
+      REC[Recommendation Service]
+      MAP[Map & POI Service]
+      LOG[Sailing Log Service]
+      EVT[Events/Reservation Service]
+      PAY[Payment Service]
+      NOTI[Notification Service]
+    end
+
+    subgraph D[Data & Intelligence]
+      DB[(OLTP DB)]
+      GEO[(Geo/Time-series DB)]
+      CACHE[(Redis Cache)]
+      DWH[(Data Lake / Warehouse)]
+      ML[(ML Pipeline)]
+    end
+
+    subgraph X[External Integrations]
+      EXT1[Maps API + Marine Public Data]
+      EXT2[Payment Gateway]
+      EXT3[Push: FCM/APNs]
+    end
+
+    APP --> GW
+    GW --> AUTH
+    GW --> USER
+    GW --> REC
+    GW --> MAP
+    GW --> LOG
+    GW --> EVT
+    GW --> PAY
+    GW --> NOTI
+
+    USER --> DB
+    LOG --> GEO
+    REC --> CACHE
+    EVT --> DB
+    PAY --> DB
+    NOTI --> DWH
+    REC --> DWH
+    DWH --> ML
+    ML -. feedback .-> REC
+
+    EXT1 --> MAP
+    EXT1 --> REC
+    EXT2 --> PAY
+    EXT3 --> NOTI
+
