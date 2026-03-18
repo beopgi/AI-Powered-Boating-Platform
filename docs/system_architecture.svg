@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1120" viewBox="0 0 1900 1120" role="img" aria-labelledby="title desc">
+  <title id="title">AI 기반 보팅 라이프 플랫폼 시스템 아키텍처</title>
+  <desc id="desc">클라이언트, 엣지, 도메인 서비스, 데이터, 외부 연동으로 구성된 아키텍처 흐름도</desc>
+
+  <defs>
+    <style>
+      .title { font: 700 36px 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif; fill:#0b172a; }
+      .layer { font: 700 24px 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif; fill:#1f2937; }
+      .label { font: 700 20px 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif; fill:#111827; }
+      .small { font: 16px 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif; fill:#1f2937; }
+      .box { rx:16; ry:16; stroke-width:2.5; }
+      .arrow { fill:none; stroke:#475569; stroke-width:2.3; marker-end:url(#arrow); }
+      .feedback { fill:none; stroke:#ea580c; stroke-width:2.8; stroke-dasharray:10 8; marker-end:url(#arrowOrange); }
+      .legend { font: 600 16px 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif; fill:#374151; }
+    </style>
+
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,12 L10,6 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,12 L10,6 z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <rect width="1900" height="1120" fill="#f8fafc"/>
+  <text x="950" y="58" text-anchor="middle" class="title">AI 기반 보팅 라이프 플랫폼 시스템 아키텍처</text>
+
+  <text x="140" y="130" class="layer">클라이언트</text>
+  <text x="450" y="130" class="layer">엣지 및 접근</text>
+  <text x="780" y="130" class="layer">도메인 서비스</text>
+  <text x="1330" y="130" class="layer">데이터·인텔리전스</text>
+  <text x="1660" y="130" class="layer">외부 연동</text>
+
+  <!-- connectors (먼저 그려서 도형 위로 겹쳐 보이지 않도록 처리) -->
+  <g id="connectors">
+    <!-- client -> edge -->
+    <path class="arrow" d="M340 240 L390 240"/>
+    <path class="arrow" d="M535 300 L535 350"/>
+
+    <!-- edge -> domain (서비스 왼쪽 버스 활용) -->
+    <path class="arrow" d="M680 240 L710 240 L710 205 L740 205"/>
+    <path class="arrow" d="M680 240 L710 240 L710 320 L740 320"/>
+    <path class="arrow" d="M680 240 L710 240 L710 435 L740 435"/>
+    <path class="arrow" d="M680 240 L710 240 L710 550 L740 550"/>
+    <path class="arrow" d="M680 240 L710 240 L710 665 L740 665"/>
+    <path class="arrow" d="M680 240 L710 240 L710 780 L740 780"/>
+    <path class="arrow" d="M680 240 L710 240 L710 895 L740 895"/>
+
+    <!-- domain -> data -->
+    <path class="arrow" d="M1030 205 L1220 225"/>
+    <path class="arrow" d="M1030 320 L1140 320 L1140 500 L1220 500"/>
+    <path class="arrow" d="M1030 435 L1220 365"/>
+    <path class="arrow" d="M1030 550 L1140 550 L1140 365 L1220 365"/>
+    <path class="arrow" d="M1030 665 L1130 665 L1130 225 L1220 225"/>
+    <path class="arrow" d="M1030 780 L1120 780 L1120 225 L1220 225"/>
+    <path class="arrow" d="M1030 895 L1220 635"/>
+
+    <!-- warehouse -> ml -->
+    <path class="arrow" d="M1380 685 L1380 720"/>
+    <path class="feedback" d="M1380 720 L1380 640 L885 640 L885 365"/>
+
+    <!-- external -> domain (상단/하단 우회 경로) -->
+    <path class="arrow" d="M1600 275 L1570 275 L1570 145 L760 145 L760 320 L740 320"/>
+    <path class="arrow" d="M1600 275 L1570 275 L1570 160 L760 160 L760 435 L740 435"/>
+    <path class="arrow" d="M1600 440 L1570 440 L1570 960 L760 960 L760 780 L740 780"/>
+    <path class="arrow" d="M1600 595 L1570 595 L1570 980 L760 980 L760 895 L740 895"/>
+  </g>
+
+  <!-- Client -->
+  <rect class="box" x="70" y="180" width="270" height="120" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="205" y="230" text-anchor="middle" class="label">모바일 앱</text>
+  <text x="205" y="257" text-anchor="middle" class="small">Flutter (iOS/Android)</text>
+  <text x="205" y="282" text-anchor="middle" class="small">홈·지도·예약·기록</text>
+
+  <!-- Edge -->
+  <rect class="box" x="390" y="180" width="290" height="120" fill="#ffedd5" stroke="#ea580c"/>
+  <text x="535" y="230" text-anchor="middle" class="label">API 게이트웨이 / BFF</text>
+  <text x="535" y="257" text-anchor="middle" class="small">라우팅·속도 제한·버전 관리</text>
+
+  <rect class="box" x="390" y="350" width="290" height="120" fill="#fef3c7" stroke="#d97706"/>
+  <text x="535" y="400" text-anchor="middle" class="label">인증 서비스</text>
+  <text x="535" y="427" text-anchor="middle" class="small">OAuth · JWT · RBAC</text>
+
+  <!-- Domain services -->
+  <rect class="box" x="740" y="160" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="214" text-anchor="middle" class="label">사용자/프로필 서비스</text>
+
+  <rect class="box" x="740" y="275" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="329" text-anchor="middle" class="label">추천 서비스</text>
+
+  <rect class="box" x="740" y="390" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="444" text-anchor="middle" class="label">지도·POI 서비스</text>
+
+  <rect class="box" x="740" y="505" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="559" text-anchor="middle" class="label">항해 기록 서비스</text>
+
+  <rect class="box" x="740" y="620" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="674" text-anchor="middle" class="label">이벤트/예약 서비스</text>
+
+  <rect class="box" x="740" y="735" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="789" text-anchor="middle" class="label">결제 서비스</text>
+
+  <rect class="box" x="740" y="850" width="290" height="90" fill="#f3e8ff" stroke="#9333ea"/>
+  <text x="885" y="904" text-anchor="middle" class="label">알림 서비스</text>
+
+  <!-- Data -->
+  <rect class="box" x="1220" y="170" width="320" height="110" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1380" y="215" text-anchor="middle" class="label">운영 DB (OLTP)</text>
+  <text x="1380" y="242" text-anchor="middle" class="small">사용자·예약·결제·POI 메타데이터</text>
+
+  <rect class="box" x="1220" y="315" width="320" height="100" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1380" y="374" text-anchor="middle" class="label">Geo/시계열 DB</text>
+
+  <rect class="box" x="1220" y="450" width="320" height="100" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1380" y="509" text-anchor="middle" class="label">Redis 캐시</text>
+
+  <rect class="box" x="1220" y="585" width="320" height="100" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1380" y="627" text-anchor="middle" class="label">데이터 레이크/웨어하우스</text>
+  <text x="1380" y="654" text-anchor="middle" class="small">행동 로그·집계·학습 데이터</text>
+
+  <rect class="box" x="1220" y="720" width="320" height="100" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="1380" y="779" text-anchor="middle" class="label">ML 파이프라인</text>
+
+  <!-- External -->
+  <rect class="box" x="1600" y="220" width="250" height="110" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="1725" y="265" text-anchor="middle" class="label">지도 API</text>
+  <text x="1725" y="292" text-anchor="middle" class="small">+ 해양 공공데이터</text>
+
+  <rect class="box" x="1600" y="390" width="250" height="100" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="1725" y="449" text-anchor="middle" class="label">결제 게이트웨이</text>
+
+  <rect class="box" x="1600" y="545" width="250" height="100" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="1725" y="587" text-anchor="middle" class="label">푸시 인프라</text>
+  <text x="1725" y="614" text-anchor="middle" class="small">FCM / APNs</text>
+
+  <!-- Legend -->
+  <rect x="70" y="990" width="1760" height="90" rx="14" ry="14" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="110" y="1032" class="legend">• 실선 화살표: 요청/데이터 전달 흐름 (도형 뒤 레이어로 렌더링)</text>
+  <text x="110" y="1060" class="legend">• 주황 점선 화살표: 추천 학습 피드백 루프 (학습 결과 재반영)</text>
+</svg>
