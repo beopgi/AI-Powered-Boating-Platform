@@ -54,18 +54,40 @@
 
 ## 5) 프로젝트 구조
 ```bash
-project-root
- ┣ lib
- ┃ ┣ models
- ┃ ┣ screens
- ┃ ┣ services
- ┃ ┗ widgets
- ┣ assets
- ┣ docs
- ┣ test
- ┣ PRD.md
- ┣ mobile_app_wireframe.md
- ┗ README.md
+lib/
+├── main.dart                  # 앱 실행 시작점 (Entry Point)
+├── app.dart                   # MaterialApp 설정 (라우팅, 테마 적용)
+│
+├── core/                      # 앱 전역에서 사용하는 설정/공통 로직
+│   └── theme/
+│       └── app_theme.dart     # 앱 전체 테마 (색상, 스타일)
+│
+├── widgets/                   # 공통 UI 컴포넌트
+│   └── main_bottom_nav.dart   # 하단 네비게이션 바
+│
+└── screens/                   # 기능(페이지) 단위 구성
+    ├── main_shell/
+    │   └── main_shell.dart    # 전체 탭 구조 관리 (페이지 전환 담당)
+    │
+    ├── home/
+    │   ├── home_page.dart         # 홈 화면 UI (추천, 메인 화면)
+    │   └── home_controller.dart   # 홈 화면 데이터/로직 처리
+    │
+    ├── map/
+    │   ├── map_page.dart          # 지도 탐색 UI
+    │   └── map_controller.dart    # 지도 관련 로직 (위치, 마커 등)
+    │
+    ├── booking/
+    │   ├── booking_page.dart      # 예약 화면 UI
+    │   └── booking_controller.dart# 예약 관련 로직 (일정, 결제 등)
+    │
+    ├── log/
+    │   ├── log_page.dart          # 항해 기록 UI
+    │   └── log_controller.dart    # 기록 데이터 처리
+    │
+    └── my/
+        ├── my_page.dart           # 마이페이지 UI (설정, 사용자 정보)
+        └── my_controller.dart     # 사용자 정보 및 설정 로직
 ```
 ## 6) Documentation & Collaboration
 
