@@ -36,7 +36,7 @@
 | Mobile | Flutter (Dart) |
 | Backend | API Gateway + Domain Services |
 | Data | GPS 데이터, 해양 공공데이터, 사용자 행동 로그 |
-| Map | Google Maps API 또는 Mapbox |
+| Map | Google Maps |
 | AI | 규칙 + 행동 기반 하이브리드 추천 |
 
 ---

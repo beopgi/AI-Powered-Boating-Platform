@@ -412,7 +412,8 @@
 ### 12.1 모바일
 - Flutter (Dart)
 - 상태관리(Riverpod/Bloc 중 택1)
-- 지도 SDK(Google Maps Flutter 또는 Mapbox Flutter)
+- 지도 SDK(Google Maps Flutter)
+- 위치 기능(GPS 기반 위치 추적, Geofence 기반 위치 이벤트 처리)
 
 ### 12.2 백엔드/인프라
 - Cloud Backend (예: GCP/AWS)
