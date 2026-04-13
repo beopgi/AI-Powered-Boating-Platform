@@ -101,6 +101,7 @@ lib/
   
 - **backend Notes**
   → [서버 기획](https://github.com/KTheES/boating_platform_server_design)
+
 ---
 ---
 
