@@ -99,7 +99,7 @@ lib/
 - **Meeting Notes**  
   → [회의록](https://github.com/beopgi/Pado-pado/tree/main/%ED%9A%8C%EC%9D%98%EB%A1%9D)
   
-- **backend Notes**
+- **backend Notes**  
   → [서버 기획](https://github.com/KTheES/boating_platform_server_design)
 
 ---
